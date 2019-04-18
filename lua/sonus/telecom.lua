@@ -56,8 +56,10 @@ function play(telecom, ctx, path)
 end
 
 function leave(telecom, ctx)
-    if telecom.clients[ctx.guild.id] then telecom.clients[ctx.guild.id].ready:get() end
-    telecom.clients[ctx.guild.id]:destroy()
+    if telecom.clients[ctx.guild.id] then
+        telecom.clients[ctx.guild.id].ready:get()
+        telecom.clients[ctx.guild.id].handle:destroy()
+    end
     telecom.clients[ctx.guild.id] = nil
     local gid = util.uint.tostring(ctx.guild.id)
     shard.send(ctx:shard(), shard.ops.VOICE_STATE_UPDATE, {
