@@ -82,8 +82,7 @@ static int Lclient_destroy(lua_State *L) {
         telecom_client_destroy(lclient->ref);
         lclient->closed = 1;
     }
-    lua_settop(L,1);
-    return 1;
+    return 0;
 }
 
 static int Lclient_set_server_info(lua_State *L) {
@@ -121,8 +120,7 @@ static int Lplayable_destroy(lua_State *L) {
         telecom_playable_destroy(lplayable->ref);
         lplayable->closed = 1;
     }
-    lua_settop(L,1);
-    return 1;
+    return 0;
 }
 
 static int Lclient_tostring(lua_State *L)
