@@ -1,3 +1,6 @@
+# Archive Notice
+This project is no longer being maintained; I've decided to stop the development of [novus][novus].
+
 ## Sonus
 Adds voice support to [novus][novus], powered by [telecom][telecom].
 
